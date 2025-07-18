@@ -1,15 +1,19 @@
-# Securing-IOT-Device-Data-using-Light-Weight-Cryptography--ASCOn
-Designed and implemented secure IoT data transmission using lightweight cryptography (ASCON), optimized for low memory, latency, and power usage. Ensured data 
-Step	Role	Device/Software
+# Securing IoT Device Data using Light Weight Cryptography - ASCON
 
+IoT devices often face significant constraints in processing power, memory, and energy, which makes implementing traditional cryptographic solutions challenging. This project leverages ASCON, a lightweight authenticated encryption algorithm, to secure data transmission in IoT environments efficiently. It provides strong confidentiality, integrity, and authenticity guarantees while maintaining minimal computational overhead.
 
-The data was encrypted on an ESP32 device, not inside VS Code or any PC server.
+The repository contains source code and practical examples showing how ASCON can be integrated with embedded devices such as ESP32, enabling real-time encryption of sensor data. This approach addresses critical security concerns in IoT applications, such as data interception and tampering, without compromising device performance or battery life.
 
-The encryption likely used the same ASCON AEAD method and timestamp-based key logic.
+## Usage
 
-Your current code, built in VS Code and run on a Crow C++ HTTP server, is only doing the decryption part.
+- Deploy the provided code on an IoT device like ESP32 with connected sensors.
+- The system encrypts sensor data using the ASCON algorithm before transmission over networks such as Wi-Fi or Bluetooth.
+- On the receiver side, the encrypted data can be decrypted to retrieve accurate and tamper-proof sensor readings.
+- Configuration parameters such as encryption keys and communication protocols can be adjusted within the source code to fit different use cases.
 
+## Features
 
-1.Encryption	On ESP32 (e.g., C code using ASCON AEAD)
-2.Send encrypted data to server	ESP32 sends data to your HTTP API
-3.Decryption	Your Crow C++ web server (probably run via VS Code or g++) decrypts the payload
+- Lightweight authenticated encryption with ASCON optimized for IoT devices.
+- Secure real-time encryption and decryption of sensor data.
+- Low resource consumption suitable for embedded and battery-powered devices.
+- Example integration with ultrasonic sensors and ESP32 microcontroller.
